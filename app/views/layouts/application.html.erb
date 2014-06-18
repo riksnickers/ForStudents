@@ -21,14 +21,14 @@
       <!-- application logo -->
       <a class="navbar-brand" href="index.html">
         <!-- application logo visible on large screens -->
-        <%= image_tag "flatty/logo.svg", size: "81x21", alt: "Flatty", class:"logo"  %>
+        <%= image_tag "logo.svg", size: "81x21", alt: "Flatty", class:"logo"  %>
         <!-- application logo visible on small screens -->
-        <%= image_tag "flatty/logo_xs.png", size: "21x21", alt: "Flatty", class:"logo-xs" %>
+        <%= image_tag "logo_xs.png", size: "21x21", alt: "Flatty", class:"logo-xs" %>
       </a>
 
       <!-- main nav toggler (show/hide) -->
       <a class="toggle-nav btn pull-left" href="#">
-        <i class="icon-reorder"></i>
+        <i class="fa-reorder"></i>
       </a>
 
       <!-- dropdowns -->
@@ -50,7 +50,7 @@
         <!-- medium dropdown & widget -->
         <li class="dropdown medium only-icon widget">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            <%= image_tag "flatty/avatar.jpg", size: "23x23", alt: "Mila Kunis" %>
+            <%= image_tag "avatar.jpg", size: "23x23", alt: "Mila Kunis" %>
             <span class="user-name">Mila Kunis</span>
             <b class="caret"></b>
             <!-- ... -->
@@ -67,7 +67,7 @@
         <!-- dark dropdown & user menu -->
         <li class="dropdown dark user-menu">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            <%= image_tag "flatty/avatar.jpg", size: "23x23", alt: "Mila Kunis" %>
+            <%= image_tag "avatar.jpg", size: "23x23", alt: "Mila Kunis" %>
             <span class="user-name">Mila Kunis</span>
             <b class="caret"></b>
           </a>
@@ -82,7 +82,7 @@
 
       <!-- search form - hidden on phone -->
       <form action="search_results.html" class="navbar-form navbar-right hidden-xs" method="get">
-        <button class="btn btn-link icon-search" name="button" type="submit"></button>
+        <button class="btn btn-link fa fa-search" name="button" type="submit"></button>
         <div class="form-group">
           <input value="" class="form-control" placeholder="Search..." autocomplete="off" id="q_header" name="q" type="text">
         </div>
@@ -99,7 +99,7 @@
           <form action="search_results.html" method="get">
             <div class="search-wrapper">
               <input value="" class="search-query form-control" placeholder="Search..." autocomplete="off" name="q" type="text">
-              <button class="btn btn-link icon-search" name="button" type="submit"></button>
+              <button class="btn btn-link fa fa-search" name="button" type="submit"></button>
             </div>
           </form>
         </div>
@@ -110,7 +110,7 @@
           <!-- single navigation item -->
           <li class="active">
             <a href="index.html">
-              <i class="icon-dashboard"></i>
+              <i class="fa fa-dashboard"></i>
               <span>Dashboard</span>
             </a>
           </li>
@@ -118,41 +118,41 @@
           <!-- four level dropdown -->
           <li>
             <a class="dropdown-collapse" href="#">
-              <i class="icon-folder-open-alt"></i>
+              <i class="fa fa-folder-open-alt"></i>
               <span>Four level dropdown</span>
-              <i class="icon-angle-down angle-down"></i>
+              <i class="fa fa-angle-down angle-down"></i>
             </a>
             <ul class="nav nav-stacked">
               <li>
                 <a class="dropdown-collapse" href="#">
-                  <i class="icon-caret-right"></i>
+                  <i class="fa fa-caret-right"></i>
                   <span>Second level</span>
-                  <i class="icon-angle-down angle-down"></i>
+                  <i class="fa fa-angle-down angle-down"></i>
                 </a>
               </li>
               <li>
                 <a class="dropdown-collapse" href="#">
-                  <i class="icon-caret-right"></i>
+                  <i class="fa fa-caret-right"></i>
                   <span>Second level</span>
-                  <i class="icon-angle-down angle-down"></i>
+                  <i class="fa fa-angle-down angle-down"></i>
                 </a>
                 <ul class="nav nav-stacked">
                   <li>
                     <a class="dropdown-collapse" href="#">
-                      <i class="icon-caret-right"></i>
+                      <i class="fa fa-caret-right"></i>
                       <span>Third level</span>
-                      <i class="icon-angle-down angle-down"></i>
+                      <i class="fa fa-angle-down angle-down"></i>
                     </a>
                     <ul class="nav nav-stacked">
                       <li>
                         <a href="#">
-                          <i class="icon-caret-right"></i>
+                          <i class="fa fa-caret-right"></i>
                           <span>Fourth level</span>
                         </a>
                       </li>
                       <li>
                         <a href="#">
-                          <i class="icon-caret-right"></i>
+                          <i class="fa fa-caret-right"></i>
                           <span>Another fourth level</span>
                         </a>
                       </li>

@@ -1,6 +1,11 @@
-@import "font-awesome";
-@import 'flatty/theme-colors';
 @import 'flatty/bootstrap/bootstrap';
 @import 'flatty/plugins/plugins';
 @import 'flatty/jquery/jquery_ui';
-@import 'flatty/light-theme';
+
+// you don't need to load theme-colors file, you can just set your desired contrast color using $contrast variable
+@import 'flatty/theme-colors';
+//$contrast: pink;
+
+//@import 'flatty/light-theme';
+@import 'flatty/dark-theme';
+//@import 'flatty/dark-blue-theme';

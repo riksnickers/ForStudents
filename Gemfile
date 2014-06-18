@@ -50,4 +50,3 @@ gem 'capistrano-rbenv'
 
 gem 'net-ssh', '~> 2.9.0'
 gem "compass-rails"
-gem 'font-awesome-rails', '~> 3.2.1.3'

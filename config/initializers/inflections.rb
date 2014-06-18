@@ -14,3 +14,8 @@
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+
+ActiveSupport::Inflector.inflections do |inflict|
+  inflict.irregular 'subscription', 'subscriptions'
+  inflict.irregular 'schools_subscription', 'schools_subscriptions'
+end

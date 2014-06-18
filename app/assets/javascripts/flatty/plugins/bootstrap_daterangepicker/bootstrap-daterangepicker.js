@@ -49,6 +49,9 @@
 
         this.cb = function () { };
 
+        // by default, the daterangepicker element is placed at the bottom of HTML body
+        this.parentEl = 'body';
+
         //element that triggered the date range picker
         this.element = $(element);
 
@@ -101,7 +104,9 @@
             '</div>' +
             '</div>';
 
-        this.container = $(DRPTemplate).appendTo('body');
+        this.parentEl = (hasOptions && options.parentEl && $(options.parentEl)) || $(this.parentEl);
+        //the date range picker
+        this.container = $(DRPTemplate).appendTo(this.parentEl);
 
         if (hasOptions) {
 
@@ -355,17 +360,15 @@
         },
 
         move: function () {
-            var minWidth = $(this.container).find('.ranges').outerWidth();
-            if ($(this.container).find('.calendar').is(':visible')) {
-                var padding = 24; // FIXME: this works for the default styling, but isn't flexible
-                minWidth += $(this.container).find('.calendar').outerWidth() * 2 + padding;
-            }
+            var parentOffset = {
+                top: this.parentEl.offset().top - (this.parentEl.is('body') ? 0 : this.parentEl.scrollTop()),
+                left: this.parentEl.offset().left - (this.parentEl.is('body') ? 0 : this.parentEl.scrollLeft())
+            };
             if (this.opens == 'left') {
                 this.container.css({
-                    top: this.element.offset().top + this.element.outerHeight(),
-                    right: $(window).width() - this.element.offset().left - this.element.outerWidth(),
-                    left: 'auto',
-                    'min-width': minWidth
+                    top: this.element.offset().top + this.element.outerHeight() - parentOffset.top,
+                    right: $(window).width() - this.element.offset().left - this.element.outerWidth() - parentOffset.left,
+                    left: 'auto'
                 });
                 if (this.container.offset().left < 0) {
                     this.container.css({
@@ -375,10 +378,9 @@
                 }
             } else {
                 this.container.css({
-                    top: this.element.offset().top + this.element.outerHeight(),
-                    left: this.element.offset().left,
-                    right: 'auto',
-                    'min-width': minWidth
+                    top: this.element.offset().top + this.element.outerHeight() - parentOffset.top,
+                    left: this.element.offset().left - parentOffset.left,
+                    right: 'auto'
                 });
                 if (this.container.offset().left + this.container.outerWidth() > $(window).width()) {
                     this.container.css({
@@ -560,7 +562,7 @@
             if (!isLeft)
                 cal = this.container.find('.calendar.right');
 
-            var month = cal.find('.monthselect').val();
+            var month = parseInt(cal.find('.monthselect').val());
             var year = cal.find('.yearselect').val();
 
             if (isLeft) {
@@ -592,13 +594,13 @@
             }
 
             if (isLeft) {
-                var start = this.startDate;
+                var start = this.startDate.clone();
                 start.hour(hour);
                 start.minute(minute);
                 this.startDate = start;
                 this.leftCalendar.month.hour(hour).minute(minute);
             } else {
-                var end = this.endDate;
+                var end = this.endDate.clone();
                 end.hour(hour);
                 end.minute(minute);
                 this.endDate = end;
@@ -661,13 +663,14 @@
             if (dayOfWeek == this.locale.firstDay)
                 startDay = daysInLastMonth - 6;
 
-            var curDate = moment([lastYear, lastMonth, startDay, hour, minute]);
-            for (var i = 0, col = 0, row = 0; i < 42; i++, col++, curDate = moment(curDate).add('day', 1)) {
+            var curDate = moment([lastYear, lastMonth, startDay, 12, minute]);
+            for (var i = 0, col = 0, row = 0; i < 42; i++, col++, curDate = moment(curDate).add('hour', 24)) {
                 if (i > 0 && col % 7 == 0) {
                     col = 0;
                     row++;
                 }
-                calendar[row][col] = curDate;
+                calendar[row][col] = curDate.clone().hour(hour);
+                curDate.hour(12);
             }
 
             return calendar;
@@ -692,7 +695,7 @@
             var currentYear = selected.year();
             var maxYear = (maxDate && maxDate.year()) || (currentYear + 5);
             var minYear = (minDate && minDate.year()) || (currentYear - 50);
-            var yearHtml = '<select class="yearselect">'
+            var yearHtml = '<select class="yearselect">';
 
             for (var y = minYear; y <= maxYear; y++) {
                 yearHtml += '<option value="' + y + '"' +
@@ -717,7 +720,7 @@
                 html += '<th></th>';
 
             if (!minDate || minDate.isBefore(calendar[1][1])) {
-                html += '<th class="prev available"><i class="icon-arrow-left glyphicon glyphicon-arrow-left"></i></th>';
+                html += '<th class="prev available"><i class="fa fa-arrow-left glyphicon glyphicon-arrow-left"></i></th>';
             } else {
                 html += '<th></th>';
             }
@@ -730,7 +733,7 @@
 
             html += '<th colspan="5" style="width: auto">' + dateHtml + '</th>';
             if (!maxDate || maxDate.isAfter(calendar[1][1])) {
-                html += '<th class="next available"><i class="icon-arrow-right glyphicon glyphicon-arrow-right"></i></th>';
+                html += '<th class="next available"><i class="fa fa-arrow-right glyphicon glyphicon-arrow-right"></i></th>';
             } else {
                 html += '<th></th>';
             }
