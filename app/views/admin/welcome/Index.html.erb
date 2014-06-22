@@ -1,31 +1,8 @@
-        <!-- page header container -->
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="page-header">
+<%= flatty_row do %>
+    <%= flatty_col 12, 12, {id: "Test"} do %>
+        <%= flatty_page_header "Title", "fa-th-list" %>
+        <span>content</span>
+    <% end %>
+<% end %>
 
-              <!-- page title -->
-              <h1 class="pull-left">
-                <i class="fa fa-save sm"></i>
-                <span>Grid</span>
-              </h1>
-
-              <!-- breadcrumbs -->
-              <div class="pull-right">
-                <ul class="breadcrumb">
-                  <li>
-                    <a href="index.html">
-                      <i class="icon-bar-chart"></i>
-                    </a>
-                  </li>
-                  <li class="separator">
-                    <i class="fa fa-angle-right"></i>
-                  </li>
-                  <li class="active">Grid</li>
-                </ul>
-              </div>
-
-            </div>
-          </div>
-          <!-- content of page -->
-        </div>
 

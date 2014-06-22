@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
+
   namespace :admin do
-  get 'welcome/Index'
+    get 'schools/Index'
+    get 'schools/List'
+    get 'schools/Create'
+    get 'schools/Settings'
+  end
+
+  namespace :admin do
+    get 'welcome/Index'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

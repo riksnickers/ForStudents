@@ -103,64 +103,18 @@
         </div>
 
         <!-- navigation items -->
-        <ul class="nav nav-stacked">
-
+        <%= flatty_navigation do %>
           <!-- single navigation item -->
-          <li class="active">
-            <a href="index.html">
-              <i class="fa fa-dashboard"></i>
-              <span>Dashboard</span>
-            </a>
-          </li>
+          <%= flatty_navigation_item admin_welcome_Index_path, "Dashboard", "fa-dashboard" %>
 
-          <!-- four level dropdown -->
-          <li>
-            <a class="dropdown-collapse" href="#">
-              <i class="fa fa-folder-open-alt"></i>
-              <span>Four level dropdown</span>
-              <i class="fa fa-angle-down angle-down"></i>
-            </a>
-            <ul class="nav nav-stacked">
-              <li>
-                <a class="dropdown-collapse" href="#">
-                  <i class="fa fa-caret-right"></i>
-                  <span>Second level</span>
-                  <i class="fa fa-angle-down angle-down"></i>
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-collapse" href="#">
-                  <i class="fa fa-caret-right"></i>
-                  <span>Second level</span>
-                  <i class="fa fa-angle-down angle-down"></i>
-                </a>
-                <ul class="nav nav-stacked">
-                  <li>
-                    <a class="dropdown-collapse" href="#">
-                      <i class="fa fa-caret-right"></i>
-                      <span>Third level</span>
-                      <i class="fa fa-angle-down angle-down"></i>
-                    </a>
-                    <ul class="nav nav-stacked">
-                      <li>
-                        <a href="#">
-                          <i class="fa fa-caret-right"></i>
-                          <span>Fourth level</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="fa fa-caret-right"></i>
-                          <span>Another fourth level</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
+          <%= flatty_navigation_drop_down("Schools", "fa-graduation-cap") do %>
+            <%= flatty_navigation_item admin_schools_Index_path, "Overview", "fa-bar-chart-o" %>
+            <%= flatty_navigation_item admin_schools_List_path, "List", "fa-list" %>
+            <%= flatty_navigation_item admin_schools_Create_path, "Create", "fa-plus" %>
+            <%= flatty_navigation_item admin_schools_Settings_path, "Settings", "fa-cog" %>
+          <% end #End Navigation drop down%>
+        <% end #End Navigation %>
+
       </div>
     </nav>
     <section id="content">
@@ -176,7 +130,7 @@
           <div class="footer-wrapper">
             <div class="row">
               <div class="col-sm-6 text">
-                Copyright © 2013 Your Project Name
+                Copyright © 2013 ForStudents
               </div>
               <div class="col-sm-6 buttons">
                 <a class="btn btn-link" href="http://www.bublinastudio.com/flatty">Preview</a>
