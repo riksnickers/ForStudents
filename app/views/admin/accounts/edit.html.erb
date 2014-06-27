@@ -1,0 +1,23 @@
+<h1>Admin::Accounts#Edit</h1>
+
+<%= form_for @user, url: {action: "update"} do |form|%>
+
+    <% if @user.errors.any? %>
+        <h2>Errors:</h2>
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li> <%= message %></li>
+          <% end %>
+        </ul>
+        <% end %>
+    <p>
+        <%= form.label :email %>
+        <%= form.text_field :email %>
+    </p>
+    <p>
+      <%= form.label :password %>
+      <%= form.password_field :password %>
+    </p>
+
+    <%= form.submit "Update account" %>
+<% end %>

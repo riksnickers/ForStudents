@@ -31,7 +31,10 @@ gem 'spring',        group: :development
 # Use unicorn as the app server
 # gem 'unicorn'
 
+#Database gem
 gem 'mysql2'
+#Create foreign keys
+gem 'foreigner'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

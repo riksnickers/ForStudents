@@ -1,4 +1,5 @@
 class Schools::School < ActiveRecord::Base
-  has_many :schools_subscriptions, :class_name => 'Schools::Subscriptions'
-  has_many :schools_students, :class_name => 'Schools::Student'
+  belongs_to :user, polymorphic: true
+  has_many :subscriptions, :class_name => 'Schools::Subscription'
+  has_many :students, :class_name => 'Schools::Student', through: :subscriptions
 end

@@ -1,0 +1,5 @@
+<%= form_for @school, url: {action: "Create"} do |form|%>
+    <%= form.text_field :Name %>
+    <%= form.text_area :Description, size: "60x12" %>
+    <%= form.submit "Create" %>
+<% end %>

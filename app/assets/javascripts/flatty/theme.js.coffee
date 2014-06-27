@@ -3,7 +3,7 @@
 * main navigation toggling
 * --------------------------------------------------------------------------------------------------------------------
 ###
-$(document).ready ->
+$(document).on 'ready page:load', ->
   nav_toggler = $("header .toggle-nav")
   nav = $("#main-nav")
   content = $("#content")
@@ -58,7 +58,7 @@ $(document).ready ->
 * plugin initializations
 * --------------------------------------------------------------------------------------------------------------------
 ###
-$(document).ready ->
+$(document).on 'ready page:load', ->
   setTimeAgo()
   setScrollable()
   setSortable($(".sortable"))

@@ -1,15 +1,24 @@
 Rails.application.routes.draw do
 
   namespace :admin do
-    get 'schools/Index'
-    get 'schools/List'
-    get 'schools/Create'
-    get 'schools/Settings'
+    resources :schools do
+      collection do
+        get 'overview'
+        get 'settings'
+      end
+    end
+
+    resources :accounts do
+      collection do
+        get 'overview'
+        get 'settings'
+      end
+    end
+
+    get 'welcome/index'
+
   end
 
-  namespace :admin do
-    get 'welcome/Index'
-  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
