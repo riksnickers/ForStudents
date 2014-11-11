@@ -1,0 +1,13 @@
+<h1>Admin::Accounts#Schools: Add</h1>
+
+<%= form_for @user, url: {action: 'addSchool'} do |form|%>
+
+    <p>
+        <% @schools.each do |school| %>
+            <span><%= school.name %></span><br/>
+        <% end %>
+    </p>
+    <%= form.select :school, options_for_select(@schools) %>
+
+    <%= form.submit 'Choose school' %>
+<% end %>

@@ -107,14 +107,14 @@
           <!-- single navigation item -->
           <%= flatty_navigation_item admin_welcome_index_path, "Dashboard", "fa-dashboard" %>
 
-          <%= flatty_navigation_drop_down 'Accounts', 'fa-users' do %>
+          <%= flatty_navigation_drop_down 'Accounts', 'admin/accounts', 'fa-users' do %>
             <%= flatty_navigation_item overview_admin_accounts_path, 'Overview', 'fa-bar-chart-o'%>
             <%= flatty_navigation_item admin_accounts_path, 'List', 'fa-list'%>
             <%= flatty_navigation_item new_admin_account_path, 'Create', 'fa-plus'%>
             <%= flatty_navigation_item settings_admin_accounts_path, 'Settings', 'fa-cog'%>
           <% end %>
 
-          <%= flatty_navigation_drop_down "Schools", "fa-graduation-cap" do %>
+          <%= flatty_navigation_drop_down "Schools", 'admin/schools', "fa-graduation-cap" do %>
             <%= flatty_navigation_item overview_admin_schools_path, 'Overview', 'fa-bar-chart-o' %>
             <%= flatty_navigation_item admin_schools_path, 'List', 'fa-list' %>
             <%= flatty_navigation_item new_admin_school_path, 'Create', 'fa-plus' %>

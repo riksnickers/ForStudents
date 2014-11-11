@@ -75,6 +75,20 @@ class Admin::AccountsController < ApplicationController
   def settings
   end
 
+  def schools
+    @user = User.find(user_id)
+    @schools = User.find(@user.id).schools_school
+  end
+
+  def selectSchools
+    @user = User.find(user_id)
+    @schools = Schools::School.all
+  end
+
+  def addSchool
+
+  end
+
   private
   def user_params
     params.require(:user).permit(:email, :password)

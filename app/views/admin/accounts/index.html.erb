@@ -4,5 +4,6 @@
     <h2><%= link_to user.email, admin_account_path(user) %>
       <small><%= link_to 'Edit', edit_admin_account_path(user) %></small>
       <small><%= link_to 'Delete', admin_account_path(user), method: :delete %></small></h2>
+      <small><%= link_to 'Schools', schools_admin_account_path(user) %></small></h2>
     <p><%= user.password %></p>
 <% end %>
