@@ -19,8 +19,9 @@ module Flatty::NavigationHelper
     end
 
     def flatty_navigation_drop_down(name = nil, icon = "fa-caret-right", &block)
+      #todo: http://stackoverflow.com/questions/21777966/bootstrap-pills-tabs-dropdowns-an-unhappy-marriage
       #Create Menu Title
-      dropDownTitle = link_to '#', {class: "dropdown-collapse",data: {no_turbolink: true}} do
+      dropDownTitle = link_to '#', {class: "dropdown-collapse", data: {no_turbolink: true}} do
         concat content_tag :i, "", {class: "icon fa " + icon}
         concat content_tag :span, name
         concat content_tag :i, "", {class: "fa fa-angle-down angle-down"}

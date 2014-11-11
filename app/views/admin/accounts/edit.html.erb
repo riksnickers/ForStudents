@@ -1,6 +1,6 @@
 <h1>Admin::Accounts#Edit</h1>
 
-<%= form_for @user, url: {action: "update"} do |form|%>
+<%= form_for @user, url: {action: 'update'} do |form|%>
 
     <% if @user.errors.any? %>
         <h2>Errors:</h2>
@@ -9,7 +9,7 @@
             <li> <%= message %></li>
           <% end %>
         </ul>
-        <% end %>
+    <% end %>
     <p>
         <%= form.label :email %>
         <%= form.text_field :email %>
@@ -19,5 +19,5 @@
       <%= form.password_field :password %>
     </p>
 
-    <%= form.submit "Update account" %>
+    <%= form.submit 'Update account' %>
 <% end %>

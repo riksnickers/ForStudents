@@ -33,7 +33,7 @@ class Admin::AccountsController < ApplicationController
       render 'new'
     else
       if @user.save
-        flash[:info] = 'You have successfully created an account'
+        flash[:info] = 'You have successfully created an account.'
         redirect_to action: 'index'
       else
         flash[:warning] = 'Something went wrong creating an account'

@@ -58,6 +58,7 @@ $(document).on 'ready page:load', ->
 * plugin initializations
 * --------------------------------------------------------------------------------------------------------------------
 ###
+
 $(document).on 'ready page:load', ->
   setTimeAgo()
   setScrollable()

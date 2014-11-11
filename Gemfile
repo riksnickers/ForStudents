@@ -53,3 +53,6 @@ gem 'capistrano-rbenv'
 
 gem 'net-ssh', '~> 2.9.0'
 gem "compass-rails"
+
+#Error:Please refer to http://tzinfo.github.io/datasourcenotfound for help resolving this error.
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]

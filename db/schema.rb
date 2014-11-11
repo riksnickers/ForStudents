@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 20140623151536) do
   create_table "schools_schools", force: true do |t|
     t.integer  "user_id"
     t.string   "user_type"
-    t.string   "Name"
-    t.text     "Description"
+    t.string   "name"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

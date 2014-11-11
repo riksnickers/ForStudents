@@ -1,2 +1,8 @@
-<h1>Admin::Schools#Index</h1>
+<h1>Schools: Index</h1>
 <p>Find me in app/views/admin/schools/Index.html.erb</p>
+<% @schools.each do |school| %>
+    <h2><%= link_to school.name, admin_school_path(school) %>
+      <small><%= link_to 'Edit', edit_admin_school_path(school) %></small>
+      <small><%= link_to 'Delete', admin_school_path(school), method: :delete %></small></h2>
+    <p><%= school.description %></p>
+<% end %>

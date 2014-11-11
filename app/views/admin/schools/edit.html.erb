@@ -1,0 +1,26 @@
+<h1>Admin::Accounts#Edit</h1>
+
+<%= form_for @school, url: {action: 'update'} do |form| %>
+
+    <% if @school.errors.any? %>
+       <h2>Errors:</h2>
+        <ul>
+          <% @school.errors.full_messazes.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+    <% end %>
+    <p>
+        <%= form.label :name %>
+      <%= form.text_field :name %>
+    </p>
+   <p>
+     <%= form.label :description %>
+     <%= form.text_field :description %>
+   </p>
+
+    <p>
+      <%= form.submit 'Update school' %>
+    </p>
+
+<% end %>

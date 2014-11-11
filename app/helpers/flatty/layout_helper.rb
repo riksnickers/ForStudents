@@ -39,7 +39,7 @@ module Flatty::LayoutHelper
         icon = 'fa-times-circle'
     end
     content_tag :div,'', {class: 'alert alert-' + type + ' alert-dismissable'} do
-      concat content_tag :a,'×', {class: 'close', href:'#', data: {dismiss: 'alert'}}
+      concat content_tag :a,'*', {class: 'close', href:'#', data: {dismiss: 'alert'}}
       concat content_tag :i,'', {class: 'icon fa ' + icon}
       concat content_tag :span, message
     end
