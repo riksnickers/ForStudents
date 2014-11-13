@@ -1,5 +1,3 @@
-require 'Schools'
-
 class Admin::SchoolsController < ApplicationController
   #GET
   #Show all resources
