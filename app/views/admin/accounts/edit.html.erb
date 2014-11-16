@@ -1,18 +1,18 @@
 <h1>Admin::Accounts#Edit</h1>
 
-<%= form_for @user, url: {action: 'update'} do |form|%>
+<%= form_for @user, url: {action: 'update'} do |form| %>
 
     <% if @user.errors.any? %>
         <h2>Errors:</h2>
         <ul>
           <% @user.errors.full_messages.each do |message| %>
-            <li> <%= message %></li>
+              <li> <%= message %></li>
           <% end %>
         </ul>
     <% end %>
     <p>
-        <%= form.label :email %><br/>
-        <%= form.text_field :email %>
+      <%= form.label :email %><br/>
+      <%= form.text_field :email %>
     </p>
     <p>
       <%= form.label :password %><br/>

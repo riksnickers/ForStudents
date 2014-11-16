@@ -22,6 +22,20 @@ class Admin::AccountsController < ApplicationController
   #Show the edit form
   def edit
     @user = User.find(user_id)
+    @school == nil
+    @student == nil
+
+    if @user.school != nil then
+      @school = @user.school
+    else
+      @school = School.new
+    end
+
+    if @user.student != nil then
+      @student = @user.student
+    else
+      @student = Student.new
+    end
   end
 
   #POST
@@ -77,12 +91,12 @@ class Admin::AccountsController < ApplicationController
 
   def schools
     @user = User.find(user_id)
-    @schools = User.find(@user.id).schools_school
+    @schools = User.find(@user.id).school
   end
 
   def selectSchools
     @user = User.find(user_id)
-    @schools = Schools::School.all
+    @schools = School.all
   end
 
   def addSchool

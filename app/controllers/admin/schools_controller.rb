@@ -2,32 +2,32 @@ class Admin::SchoolsController < ApplicationController
   #GET
   #Show all resources
   def index
-    @schools = Schools::School.all
+    @schools = School.all
   end
 
   #GET
   #Show one resource
   def show
-    @school = Schools::School.find(school_id)
+    @school = School.find(school_id)
   end
 
   #GET
   #Show the create form
   def new
-    @school = Schools::School.new
+    @school = School.new
   end
 
   #GET
   #Show the edit form
   def edit
-    @school = Schools::School.find(school_id)
+    @school = School.find(school_id)
   end
 
   #POST
   #Create a new resource object
   def create
     logger.info 'Create'
-    @school = Schools::School.new(school_params)
+    @school = School.new(school_params)
     if @school.valid?
       if @school.save
         flash[:info] = 'You have successfully created a school.'
@@ -43,7 +43,7 @@ class Admin::SchoolsController < ApplicationController
   #Update an existing resource object
   def update
     logger.info 'Update school'
-    @school = Schools::School.find(school_id)
+    @school = School.find(school_id)
     if @school.invalid?
       render 'edit'
     else
@@ -71,7 +71,7 @@ class Admin::SchoolsController < ApplicationController
 
   private
   def school_params
-    params.require(:schools_school).permit(:name, :description)
+    params.require(:school).permit(:name, :description)
   end
 
   private

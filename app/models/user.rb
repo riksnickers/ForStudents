@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  has_one :schools_school, :class_name => 'Schools::School'
-  has_one :schools_student, :class_name => 'Schools::Student'
+  has_one :school, :class_name => 'School'
+  has_one :student, :class_name => 'Student'
 
   validates :email, presence: true,
                     length: {minimum: 4},
