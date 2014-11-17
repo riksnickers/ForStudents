@@ -8,7 +8,7 @@
       <% elsif user.school != nil then %>
           <small>Is school</small>
       <% else %>
-          <small>Account Type Unknown</small>
+          <small><%= link_to 'Select Type', type_admin_account_path(user) %></small>
       <% end %>
       <small><%= link_to 'Edit', edit_admin_account_path(user) %></small>
       <small><%= link_to 'Delete', admin_account_path(user), method: :delete %></small>

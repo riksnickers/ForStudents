@@ -99,8 +99,8 @@ class Admin::AccountsController < ApplicationController
     @schools = School.all
   end
 
-  def addSchool
-
+  def accountType
+    @user = User.find(user_id)
   end
 
   private

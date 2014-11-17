@@ -16,7 +16,7 @@ Rails.application.routes.draw do
       #todo: Reminser: A user can be created as a school or as a student.
       get 'schools' => 'accounts#schools', as: :schools, on: :member
       get 'schools/select' => 'accounts#selectSchools', as: :select_school, on: :member
-      post 'schools/add' => 'accounts#addSchool', on: :member
+      get 'type' => 'accounts#accountType', on: :member
     end
 
     get 'welcome/index'
